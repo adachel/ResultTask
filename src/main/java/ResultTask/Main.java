@@ -1,11 +1,10 @@
 package ResultTask;
 
+import ResultTask.Menu.GenMenu;
+
 public class Main {
     public static void main(String[] args) {
-
-        System.out.printf("Hello and welcome!");
-        System.out.printf("Hello and welcome!");
-        System.out.printf("Hello and welcome!");
-
+        GenMenu genMenu = new GenMenu();
+        genMenu.runGenMenu();
     }
 }
