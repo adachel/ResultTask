@@ -1,32 +1,31 @@
 package ResultTask.Menu;
 
-import ResultTask.Logs.Logs;
+import ResultTask.Database.Database;
 
 import java.util.Scanner;
 
 public class GenMenu {
-    Logs logs = new Logs();
-    public void runGenMenu() {
-        logs.cleanFileLog();
+
+    public void runGenMenu(){
+
+        Database database = new Database();
+
         boolean temp = true;
         while (temp) {
-            System.out.println("Выберите: 1 - Создать животное, 2 - Просмотр лог-фaйлa, 0 - Выход");
+            System.out.println("Выберите: 1 - Создать животное, 2 - Просмотр реестра 0 - Выход");
 
             switch (input()) {
                 case "0" -> temp = false;
                 case "1" -> {
-                    CreateAnimalMenu createAnimalMenu = new CreateAnimalMenu();
-//                    logs.addMessage("Создать животное");
+                    AnimalMenu createAnimalMenu = new AnimalMenu();
                     createAnimalMenu.runAnumalMemu();
                 }
                 case "2" -> {
-                    logs.addMessage("Просмотр логов.");
-//                    String logs = Files.readString(logs.creatMessage());
-                    System.out.println(logs);
+                    database.readDatabase();
                 }
                 default -> {
                     System.out.println("Введите корректный выбор");
-                    logs.addMessage("Не корректный выбор");
+
                 }
             }
         }
