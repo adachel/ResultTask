@@ -8,21 +8,37 @@ import java.util.Scanner;
 
 public class MainlMenu {
     Controller controller = new Controller();
+
     public void runMenu(){
         boolean temp = true;
         while (temp) {
             System.out.println("Меню:");
-            System.out.println("1 - Добавить животное, 2 - Добавить команду, 3 - Список по дате рождения, 0 - Выход");
+            System.out.println( "1 - Добавить животное, 2 - Добавить команду, 3 - Список по дате рождения, " +
+                                "4 - Количество домашних животных, 5 - Количество вьючных животных, " +
+                                "6 - Общее количество животных в списка, 0 - Выход");
             switch (input()) {
                 case "0" -> temp = false;
                 case "1" -> { addAnimal(); }
                 case "2" -> { addCommands(); }
                 case "3" -> { controller.sortAnimal(); }
+                case "4" -> {
+                    Pets pets = new Pets();
+                    System.out.println("Домашних животных: " + pets.getCounter());
+                }
+                case "5" -> {
+                    PackAnimals packAnimals = new PackAnimals();
+                    System.out.println("Вьючных животных: " + packAnimals.getCounter());
+                }
+                case "6" -> {
+                    Pets pets = new Pets();
+                    PackAnimals packAnimals = new PackAnimals();
+                    System.out.println("Всего животных: " + (pets.getCounter() + packAnimals.getCounter()));
+                }
                 default -> { System.out.println("Введите корректный выбор"); }
             }
         }
     }
-    public void addAnimal(){
+    private void addAnimal(){
         System.out.println("Введите имя животного:");
         String name = input();
         System.out.println("Введите дату рождения животного:");
@@ -32,9 +48,9 @@ public class MainlMenu {
 
         typeAnimal(name, birthDate, command);
     }
-    public void typeAnimal(String name, String birthDate, String command){
+    private void typeAnimal(String name, String birthDate, String command){
         System.out.println("Тип животного:");
-        System.out.println("1 - Собака, 2 - Кошка, 3 - Хомяк, 4 - Лошадь, 5 - Верблюд, 6 - Осел, 0 - Выход");
+        System.out.println("1 - Собака, 2 - Кошка, 3 - Хомяк, 4 - Лошадь, 5 - Верблюд, 6 - Осел");
         switch (input()) {
             case "1" -> {
                 Dog dog = new Dog(name, birthDate);
@@ -70,10 +86,10 @@ public class MainlMenu {
             default -> { System.out.println("Введите корректный выбор"); }
         }
     }
-    public void addCommands(){
+    private void addCommands(){
         System.out.println("Выберите тип животного:");
         String type = "";
-        System.out.println("1 - Собака, 2 - Кошка, 3 - Хомяк, 4 - Лошадь, 5 - Верблюд, 6 - Осел, 0 - Выход");
+        System.out.println("1 - Собака, 2 - Кошка, 3 - Хомяк, 4 - Лошадь, 5 - Верблюд, 6 - Осел");
         switch (input()) {
             case "1" -> { type = "Dog"; }
             case "2" -> { type = "Cat"; }
@@ -91,7 +107,7 @@ public class MainlMenu {
         List<List<String>> animals = controller.animals();
         controller.addCommand(type, animals, name, newCommand);
     }
-    protected String input() {
+    private String input() {
         Scanner in = new Scanner(System.in);
         return in.nextLine();
     }

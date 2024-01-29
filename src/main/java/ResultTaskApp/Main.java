@@ -8,6 +8,5 @@ public class Main {
         MainlMenu mainlMenu = new MainlMenu();
         mainlMenu.runMenu();
 
-
     }
 }

@@ -3,6 +3,7 @@ package ResultTaskApp.Animals;
 public abstract class Animal {
     private String name;
     private String birthDate;
+
     public Animal(String name, String birthDate) {
         this.name = name;
         this.birthDate = birthDate;
@@ -24,4 +25,5 @@ public abstract class Animal {
     }
 
     abstract public String addCommand(String command);
+
 }

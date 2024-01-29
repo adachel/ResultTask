@@ -1,12 +1,20 @@
 package ResultTaskApp.Animals;
 
-public abstract class Pets extends Animal {
+public class Pets extends Animal {
+
+    private static int counter = 0;
     public Pets(String name, String birthDate) {
         super(name, birthDate);
+        counter ++;
     }
     public Pets() {
     }
 
+    public String addCommand(String command) {
+        return null;
+    }
 
-    abstract public String addCommand(String command);
+    public int getCounter(){
+        return counter;
+    }
 }
