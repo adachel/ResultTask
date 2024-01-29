@@ -1,7 +1,6 @@
 package ResultTaskApp;
 
 import ResultTaskApp.Animals.Animal;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,6 @@ public class Controller {
     public List<List<String>> animals(){
         return this.base;
     }
-
     public void sortAnimal(){
         for (int j = 0; j < base.size() - 1; j++) {
             for (int i = 0; i < base.size() - 1; i++) {
