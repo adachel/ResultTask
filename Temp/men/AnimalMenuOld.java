@@ -2,7 +2,6 @@ package ResultTask.Menu;
 
 import java.util.Scanner;
 public class AnimalMenu extends GenMenu{
-
     public void runAnumalMemu(){
         boolean temp = true;
         while (temp) {
