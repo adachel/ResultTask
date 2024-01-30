@@ -11,15 +11,16 @@ public class MainlMenu {
     public void runMenu(){
         boolean temp = true;
         while (temp) {
+            System.out.println();
             System.out.println( "1 - Добавить животное");
             System.out.println( "2 - Добавить команду");
             System.out.println( "3 - Список по дате рождения");
             System.out.println( "4 - Количество домашних животных");
             System.out.println( "5 - Количество вьючных животных");
             System.out.println( "7 - Просмотр реестра");
+            System.out.println();
             System.out.println( "8 - Сохранить реестр в файл");
-            System.out.println( "9 - Перезаписать файл с данными");
-            System.out.println( "0 - Просмотр файла реестра");
+            System.out.println( "9 - Просмотр файла реестра");
             System.out.println( "q - Выход");
 
             switch (input()) {
@@ -42,6 +43,7 @@ public class MainlMenu {
                 }
                 case "7" -> { controller.viewDatabase(); }
                 case "8" -> { controller.saveToFile(); }
+                case "9" -> { controller.viewFileBase(); }
                 default -> { System.out.println("Не корректный выбор! Выберите пункт меню."); }
             }
         }

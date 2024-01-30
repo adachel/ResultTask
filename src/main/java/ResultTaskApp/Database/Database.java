@@ -2,9 +2,7 @@ package ResultTaskApp.Database;
 
 import ResultTaskApp.Animals.Animal;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,14 +10,11 @@ import java.util.List;
 public class Database {
 
     private List<List<String>> animals = new ArrayList<>();
-    private Path Dir;
-    private Path file;
     private String FILE_PATH = "src/main/java/ResultTaskApp/Database/fileBase.txt";
 
     public Database(List<List<String>> animals, Path dir, Path file) {
         this.animals = animals;
-        Dir = dir;
-        this.file = file;
+
     }
     public Database(List<List<String>> animals) {
         this.animals = animals;
@@ -64,10 +59,10 @@ public class Database {
                 }
             }
         }
-        System.out.println(animals);
     }
     public void viewBase(){
         for (List<String> animal : animals) {
+            System.out.println();
             System.out.println(animal);
         }
     }
@@ -84,6 +79,18 @@ public class Database {
             System.out.println("Данные сохранены.");
         } catch (IOException e) {
             System.out.println("Данные не сохранены: " + e.getMessage());
+        }
+    }
+    public void viewFileBase(){
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+            System.out.println();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println("Данные загружены успешно.");
+        } catch (IOException e) {
+            System.out.println("Ошибка при чтении файла с данными: " + e.getMessage());
         }
     }
 }

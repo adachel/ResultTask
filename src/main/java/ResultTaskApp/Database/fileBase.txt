@@ -1,1 +1,3 @@
-[Dog, 1, fido, commands: 2020-01-01]
+[Dog, fido, 2020-01-01, commands: sit]
+[Dog, buddy, 2019-10-12, commands: down]
+[Cat, barsik, 2018-12-12, commands: com]

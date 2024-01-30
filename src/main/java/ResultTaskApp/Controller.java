@@ -26,12 +26,16 @@ public class Controller {
 
     public void sortDatabase(){
         database.sortBase();
+        database.viewBase();
     }
 
     public void saveToFile(){
         database.saveFileBase();
     }
 
+    public void viewFileBase(){
+        database.viewFileBase();
+    }
 
 
 }
