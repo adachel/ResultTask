@@ -1,7 +1,5 @@
 package ResultTaskApp.Animals;
 
-import ResultTaskApp.Animals.Animal;
-
 public class Pets extends Animal {
 
     private static int counter = 0;

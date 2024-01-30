@@ -1,15 +1,12 @@
 package ResultTaskApp.Animals;
 
-import ResultTaskApp.Animals.Animal;
-
-public class Pets extends Animal {
-
+public class PackAnimals extends Animal {
     private static int counter = 0;
-    public Pets(String name, String birthDate) {
+    public PackAnimals(String name, String birthDate) {
         super(name, birthDate);
         counter ++;
     }
-    public Pets() {
+    public PackAnimals() {
     }
 
     public String addCommand(String command) {

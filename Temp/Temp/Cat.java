@@ -1,11 +1,10 @@
 package ResultTaskApp.Animals;
 
-public class Camel extends PackAnimals {
-    public Camel(String name, String birthDate) {
+public class Cat extends Pets{
+    public Cat(String name, String birthDate) {
         super(name, birthDate);
     }
-
-    public Camel() {
+    public Cat() {
     }
 
     @Override
