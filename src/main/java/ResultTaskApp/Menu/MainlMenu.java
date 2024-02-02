@@ -17,6 +17,7 @@ public class MainlMenu {
             System.out.println( "3 - Список по дате рождения");
             System.out.println( "4 - Количество домашних животных");
             System.out.println( "5 - Количество вьючных животных");
+            System.out.println( "6 - Общее количество");
             System.out.println( "7 - Просмотр реестра");
             System.out.println();
             System.out.println( "8 - Сохранить реестр в файл");
@@ -51,7 +52,7 @@ public class MainlMenu {
     private void addAnimal(){
         System.out.println("Введите имя животного:");
         String name = input();
-        System.out.println("Введите дату рождения животного:");
+        System.out.println("Введите дату рождения животного в формате YYYY-MM-DD:");
         String birthDate = input();
         System.out.println("Введите команды, выполняемые животным");
         String command = input();

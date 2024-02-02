@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
-
     private List<List<String>> animals = new ArrayList<>();
     private String FILE_PATH = "src/main/java/ResultTaskApp/Database/fileBase.txt";
 
@@ -21,7 +20,6 @@ public class Database {
     }
     public Database() {
     }
-
     public void addBase(String type, Animal animal, String commands){
         List<String> list = new ArrayList<>();
         list.add(type);
@@ -62,7 +60,6 @@ public class Database {
     }
     public void viewBase(){
         for (List<String> animal : animals) {
-            System.out.println();
             System.out.println(animal);
         }
     }
